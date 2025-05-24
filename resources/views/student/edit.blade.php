@@ -23,8 +23,56 @@
             </div>
 
             <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700">شماره تماس</label>
+                <label for="phone" class="block text-sm font-medium text-gray-700">شماره تماس فرزند</label>
                 <input type="text" id="phone" name="phone" value="{{ $students->phone }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">ایمیل</label>
+                <input type="text" id="email" name="email" value="{{ $students->email }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
+            </div>
+
+            <div>
+                <label for="nameFather" class="block text-sm font-medium text-gray-700">نام پدر</label>
+                <input type="text" id="nameFather" name="nameFather" value="{{ $students->nameFather }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
+            </div>
+
+            <div>
+                <label for="codeFather" class="block text-sm font-medium text-gray-700">کد ملی پدر</label>
+                <input type="text" id="codeFather" name="codeFather" value="{{ $students->codeFather }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
+            </div>
+
+            <div>
+                <label for="phoneFather" class="block text-sm font-medium text-gray-700">شماره تلفن پدر</label>
+                <input type="text" id="phoneFather" name="phoneFather" value="{{ $students->phoneFather }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
+            </div>
+
+            <div>
+                <label for="nameMother" class="block text-sm font-medium text-gray-700">نام مادر</label>
+                <input type="text" id="nameMother" name="nameMother" value="{{ $students->nameMother }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
+            </div>
+
+            <div>
+                <label for="codeMother" class="block text-sm font-medium text-gray-700">کد ملی مادر</label>
+                <input type="text" id="codeMother" name="codeMother" value="{{ $students->codeMother }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
+            </div>
+
+            <div>
+                <label for="phoneMother" class="block text-sm font-medium text-gray-700">شماره تلفن مادر</label>
+                <input type="text" id="phoneMother" name="phoneMother" value="{{ $students->phoneMother }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
+            </div>
+
+            <div>
+                <label for="avatar" class="block text-sm font-medium text-gray-700">عکس دانش آموز (اختیاری)</label>
+                <input type="text" id="avatar" name="avatar" value="{{ $students->avatar }}"
                     class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
             </div>
 
@@ -32,6 +80,12 @@
                 <label for="address" class="block text-sm font-medium text-gray-700">آدرس</label>
                 <textarea id="address" name="address" rows="3"
                     class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">{{ $students->address }}</textarea>
+            </div>
+
+            <div>
+                <label for="isActive" class="block text-sm font-medium text-gray-700">فعال بودن یا حذف شدن</label>
+                <input type="text" id="isActive" name="isActive" value="{{ $students->isActive }}"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-5">
             </div>
 
             <div class="flex justify-end space-x-4 space-x-reverse">

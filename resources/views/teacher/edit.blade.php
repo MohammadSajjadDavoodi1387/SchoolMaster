@@ -5,7 +5,7 @@
          <!-- Main Content -->
         <main class="flex-1 p-8">
             <header class="bg-white shadow rounded-lg p-6 mb-8">
-                <h1 class="text-2xl font-bold text-gray-800">فرم معلم</h1>
+                <h1 class="text-2xl font-bold text-gray-800">فرم ویرایش اطلاعات معلم</h1>
             </header>
             <div class="bg-white rounded-lg shadow p-6 max-w-xl mx-auto">
                 <form method="POST" action="{{ route('teacher.update') }}">

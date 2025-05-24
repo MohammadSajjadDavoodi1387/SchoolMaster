@@ -16,7 +16,16 @@ return new class extends Migration
             $table->string('name',100);
             $table->string('code',15);
             $table->string('phone',15);
+            $table->string('email',100);
+            $table->string('nameFather',60);
+            $table->string('codeFather',60);
+            $table->string('phoneFather',60);
+            $table->string('nameMother',60);
+            $table->string('codeMother',60);
+            $table->string('phoneMother',60);
+            $table->string('avatar',300);
             $table->string('address',60);
+            $table->boolean('isActive')->default(1);
             $table->timestamps();
         });
     }
