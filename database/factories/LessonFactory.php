@@ -22,10 +22,9 @@ class LessonFactory extends Factory
         return [
             'titleFa' => $this->faker->randomElement(['ریاضی', 'علوم', 'ادبیات', 'دینی' , 'عربی' , 'انگلیسی' , 'فارسی' , 'کسب و کار']),
             'titleEn' => $this->faker->word,
-            'producer' => $this->faker->company,
+            'producer' => $this->faker->numberBetween(1, 8),
             'type' => $this->faker->randomElement(static::$types),
-            'code' => $this->faker->ean13,
-            'description' => $this->faker->sentence(),
+            'code' => $this->faker->numerify('##########'),
             'isActive' => $this->faker->boolean,
         ];
     }

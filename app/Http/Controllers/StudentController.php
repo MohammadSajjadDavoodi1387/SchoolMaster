@@ -55,10 +55,19 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'code' => 'required|string|max:10',
-            'phone' => 'required|string',
-            'address' => 'nullable|string',
+            'name'        => 'required|string|max:100',
+            'code'        => 'required|string|max:15',
+            'phone'       => 'required|string|max:15',
+            'email'       => 'required|string|email|max:100',
+            'nameFather'  => 'required|string|max:60',
+            'codeFather'  => 'required|string|max:60',
+            'phoneFather' => 'required|string|max:60',
+            'nameMother'  => 'required|string|max:60',
+            'codeMother'  => 'required|string|max:60',
+            'phoneMother' => 'required|string|max:60',
+            'avatar'      => 'nullable|string|max:300',
+            'address'     => 'required|string|max:60',
+            'isActive'    => 'sometimes|boolean',
         ]);
 
         $students = Student::findOrFail($id);

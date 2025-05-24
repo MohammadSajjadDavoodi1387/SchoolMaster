@@ -23,10 +23,9 @@ class LessonController extends Controller
         $validated = $request->validate([
             'titleFa' => 'required|string|max:100',
             'titleEn' => 'required|string|max:100',
-            'producer' => 'nullable|string|max:100',
+            'producer' => 'nullable|string|max:10',
             'type' => 'nullable|string|max:40',
             'code' => 'nullable|string|max:40',
-            'description' => 'nullable|string|max:600',
             'isActive' => 'required|boolean',
         ]);
 
@@ -56,7 +55,6 @@ class LessonController extends Controller
             'producer' => 'nullable|string|max:100',
             'type' => 'nullable|string|max:40',
             'code' => 'nullable|string|max:40',
-            'description' => 'nullable|string|max:600',
             'isActive' => 'required|boolean',
         ]);
 
