@@ -75,4 +75,10 @@ class StudentController extends Controller
 
         return redirect()->route('students.index')->with("success","Student update Successfully");
     }
+
+    public function show($id)
+    {
+        $students=Student::find($id);
+        return view('student.show',compact('students'));
+    }
 }

@@ -27,7 +27,7 @@
                         @foreach ($teacher as $teachers )
                         <tr>
                             <td><img class="w-12 h-12 rounded-full" src="{{ asset('storage/teachers/'.$teachers->avatar) }}"   /></td>
-                            <td class="px-6 py-4 whitespace-nowrap">استاد {{$teachers->name}}</td>
+                            <td class="px-6 py-4 whitespace-nowrap"><a href="{{route('teacher.show',$teachers->id)}}">استاد {{$teachers->name}}</a></td>
                             <td class="px-6 py-4 whitespace-nowrap">{{$teachers->major}}</td>
                             <td class="px-6 py-4 whitespace-nowrap">{{$teachers->phone}}</td>
                             <td class="px-6 py-4 whitespace-nowrap flex items-center space-x-2 space-x-reverse">

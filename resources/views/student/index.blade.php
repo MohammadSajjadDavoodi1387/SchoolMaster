@@ -19,14 +19,14 @@
                             <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">نام بیمار</th>
                             <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">کد ملی</th>
                             <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">شماره تماس دانش آموز</th>
-                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">جزئیات</th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">کد ملی</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($students as $student)
                         <tr>
                         <td><img class="w-12 h-12 rounded-full" src="{{ asset('storage/students/'.$student->avatar) }}"   /></td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $student->name }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap"><a href="{{route('student.show',$student->id)}}">{{ $student->name }}</a></td>
                             <td class="px-6 py-4 whitespace-nowrap">{{ $student->code }}</td>
                             <td class="px-6 py-4 whitespace-nowrap">{{ $student->phone }}</td>
                             <td class="px-6 py-4 whitespace-nowrap flex items-center space-x-2 space-x-reverse">

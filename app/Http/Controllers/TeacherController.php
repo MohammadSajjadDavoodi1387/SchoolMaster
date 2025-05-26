@@ -55,4 +55,10 @@ class TeacherController extends Controller
 
         return redirect()->route('teacher.index')->with('success', 'Teacher delete successfully.');
     }
+
+    public function show($id)
+    {
+        $teacher=Teacher::find($id);
+        return view('teacher.show',compact('teacher'));
+    }
 }

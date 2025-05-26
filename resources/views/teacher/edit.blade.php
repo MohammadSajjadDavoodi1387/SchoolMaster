@@ -12,11 +12,11 @@
                     @csrf
                     <input type="hidden" name="id" value="{{ $teacher->id }}">
                     <div class="mb-4">
-                        <label class="block text-gray-700 mb-2" for="name">نام پزشک</label>
+                        <label class="block text-gray-700 mb-2" for="name">نام معلم</label>
                         <input id="name" name="name" type="text" value="{{$teacher->name}}" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
                     <div class="mb-4">
-                        <label class="block text-gray-700 mb-2" for="licence">شماره نظام پزشکی</label>
+                        <label class="block text-gray-700 mb-2" for="licence">کد معلم</label>
                         <input id="licence" name="licence" type="text" value="{{$teacher->licence}}" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
                     <div class="mb-4">
