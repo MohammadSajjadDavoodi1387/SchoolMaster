@@ -23,6 +23,7 @@ class Student extends Model
     'phoneMother' ,
     'avatar' ,
     'address' , 
-    'isActive'
+    'isActive',
+    'base',
     ];
 }

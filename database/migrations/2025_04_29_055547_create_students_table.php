@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('avatar',300);
             $table->string('address',60);
             $table->boolean('isActive')->default(1);
+            $table->string('base',15);
             $table->timestamps();
         });
     }

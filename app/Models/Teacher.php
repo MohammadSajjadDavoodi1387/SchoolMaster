@@ -26,4 +26,10 @@ class Teacher extends Model
     {
         return $this->hasMany(Major::class);
     }
+
+        public function classTeacherLessons()
+    {
+        return $this->hasMany(ClassTeacherLesson::class, 'teacher_id');
+    }
+
 }

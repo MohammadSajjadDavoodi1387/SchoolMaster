@@ -49,10 +49,17 @@
                             <p class="text-2xl font-bold text-gray-800">{{ $lessons->count() }}</p>
                         </div>
                     </div>
-                </div>
-                
+                </div> 
             </div>
 
+            <div class="mb-10">
+                <a href="/program">
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded">
+                        تنظیم برنامه کلاس ها
+                    </button>
+                </a>
+            </div>
+            
             <!-- Charts and Tables Section -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <!-- Prescription Trends Chart -->

@@ -25,6 +25,7 @@ class StudentFactory extends Factory
             'avatar'       => '50.png',
             'address' => substr(\Faker\Factory::create('en_US')->address, 0, 60),
             'isActive'     => $this->faker->boolean(90),
+            'base' => '201',
         ];
     }
 }

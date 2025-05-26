@@ -5,6 +5,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ClassTeacherLessonController;
 
 Route::get('/teachers', [TeacherController::class,'index'])->name('teacher.index');
 Route::get('/teachers/create', [TeacherController::class,'create'])->name('teacher.create');
@@ -24,5 +25,9 @@ Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('st
 Route::get('/students/edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
 Route::post('/students/{id}', [StudentController::class, 'update'])->name('student.update');
 Route::get('/students/{id}', [StudentController::class,'show'])->name('student.show');
+
+Route::get('/program', [ClassTeacherLessonController::class, 'program'])->name('program.create');
+Route::post('/program/store', [ClassTeacherLessonController::class, 'store'])->name('program.store');
+
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

@@ -33,6 +33,7 @@ class StudentController extends Controller
             'avatar'      => 'nullable|string|max:300',
             'address'     => 'required|string|max:60',
             'isActive'    => 'sometimes|boolean',
+            'base'        => 'required|string|max:15',
         ]);
 
         Student::create($validated);
@@ -68,6 +69,7 @@ class StudentController extends Controller
             'avatar'      => 'nullable|string|max:300',
             'address'     => 'required|string|max:60',
             'isActive'    => 'sometimes|boolean',
+            'base'        => 'required|string|max:15',
         ]);
 
         $students = Student::findOrFail($id);

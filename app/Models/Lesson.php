@@ -21,4 +21,9 @@ class Lesson extends Model
 
     public $timestamps = true;
     protected $guarded = [];
+
+    public function classTeacherLessons()
+    {
+        return $this->hasMany(ClassTeacherLesson::class, 'lesson_id');
+    }
 }
