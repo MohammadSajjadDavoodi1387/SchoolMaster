@@ -20,9 +20,51 @@
                         <input id="licence" name="licence" type="text" value="{{$teacher->licence}}" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
                     <div class="mb-4">
-                        <label class="block text-gray-700 mb-2" for="major">تخصص</label>
-                        <input id="major" name="major" type="text" value="{{$teacher->major}}" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <label class="block text-gray-700 mb-2">تخصص‌ها</label>
+                        <div id="majors-container" class="space-y-2">
+                            @if(count($teacherMajors) > 0)
+                                @foreach($teacherMajors as $major)
+                                    <div class="flex items-center gap-2">
+                                        <input name="majors[]" type="text" value="{{ $major }}" placeholder="مثلاً ریاضی" class="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                        <button type="button" onclick="this.parentElement.remove()" class="text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded">-</button>
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="flex items-center gap-2">
+                                    <input name="majors[]" type="text" placeholder="مثلاً ریاضی" class="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                    <button type="button" onclick="this.parentElement.remove()" class="text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded">-</button>
+                                </div>
+                            @endif
+                        </div>
+                        <button type="button" onclick="addMajorInput()" class="text-white bg-green-500 hover:bg-green-600 px-3 py-2 rounded mt-2">+</button>
                     </div>
+
+                    <script>
+                        function addMajorInput() {
+                            const container = document.getElementById('majors-container');
+
+                            const wrapper = document.createElement('div');
+                            wrapper.className = 'flex items-center gap-2';
+
+                            const input = document.createElement('input');
+                            input.name = 'majors[]';
+                            input.type = 'text';
+                            input.placeholder = 'تخصص دیگر...';
+                            input.className = 'flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500';
+
+                            const removeBtn = document.createElement('button');
+                            removeBtn.type = 'button';
+                            removeBtn.innerText = '-';
+                            removeBtn.className = 'text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded';
+                            removeBtn.onclick = () => wrapper.remove();
+
+                            wrapper.appendChild(input);
+                            wrapper.appendChild(removeBtn);
+
+                            container.appendChild(wrapper);
+                        }
+                    </script>
+
                     <div class="mb-4">
                         <label class="block text-gray-700 mb-2" for="phone">شماره تماس</label>
                         <input id="phone" name="phone" type="text" value="{{$teacher->phone}}" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>

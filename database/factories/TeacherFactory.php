@@ -11,9 +11,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class TeacherFactory extends Factory
 {
 
-    protected static array $major = ['فارسی','ریاضی','علوم','اجتماعی','عربی','انگلیسی',
-    'جغرافیا','تاریخ','زیست','شیمی','نصب و راه اندازی سیستم','تولید محتوا'];
-
     /**
      * Define the model's default state.
      *
@@ -24,7 +21,6 @@ class TeacherFactory extends Factory
         return [
             'name' => fake()->name(),
             'licence' => fake()->numberBetween(12345678,99999999),
-            'major'=>fake()->randomElement(static::$major),
             'phone' => fake()->phoneNumber(),
             'email' => fake()->unique()->safeEmail(),
             'address' => fake()->address(),

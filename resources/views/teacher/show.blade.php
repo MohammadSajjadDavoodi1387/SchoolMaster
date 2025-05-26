@@ -72,8 +72,15 @@
                             </div>
                             <!-- بخش تخصص -->
                             <div class="w-full mt-6 px-4 py-3 bg-gray-50 rounded-lg shadow-md border border-gray-200">
-                                <h2 class="text-xl font-semibold text-gray-700 mb-3 border-b border-gray-300 pb-2">تخصص معلم</h2>
-                                <p class="text-gray-600 mb-1"><strong>نام تخصص:</strong> {{ $teacher->major ?? 'NotFound' }}</p>
+                                <h2 class="text-xl font-semibold text-gray-700 mb-3 border-b border-gray-300 pb-2">تخصص‌های معلم</h2>
+                                
+                                @forelse($teacher->majors as $major)
+                                    <p class="text-gray-600 mb-1">
+                                        <strong>نام تخصص:</strong> {{ $major->title }}
+                                    </p>
+                                @empty
+                                    <p class="text-red-500">تخصصی ثبت نشده است.</p>
+                                @endforelse
                             </div>
                         </div>
                     </div>

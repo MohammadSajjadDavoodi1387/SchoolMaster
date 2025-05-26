@@ -16,11 +16,14 @@ class Teacher extends Model
     protected $fillable = [
         'name',
         'licence',
-        'major',
         'phone',
         'email',
         'address',
         'avatar',
         'isActive'
     ];
+        public function majors()
+    {
+        return $this->hasMany(Major::class);
+    }
 }
