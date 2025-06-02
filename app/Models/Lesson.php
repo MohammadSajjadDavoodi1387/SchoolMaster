@@ -26,4 +26,9 @@ class Lesson extends Model
     {
         return $this->hasMany(ClassTeacherLesson::class, 'lesson_id');
     }
+
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'lesson_id');
+    }
 }

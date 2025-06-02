@@ -32,4 +32,9 @@ class Teacher extends Model
         return $this->hasMany(ClassTeacherLesson::class, 'teacher_id');
     }
 
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'teacher_id');
+    }
+
 }

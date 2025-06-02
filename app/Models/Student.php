@@ -26,4 +26,9 @@ class Student extends Model
     'isActive',
     'base',
     ];
+
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'student_id');
+    }
 }

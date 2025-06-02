@@ -6,6 +6,7 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ClassTeacherLessonController;
+use App\Http\Controllers\GradeController;
 
 Route::get('/teachers', [TeacherController::class,'index'])->name('teacher.index');
 Route::get('/teachers/create', [TeacherController::class,'create'])->name('teacher.create');
@@ -28,6 +29,9 @@ Route::get('/students/{id}', [StudentController::class,'show'])->name('student.s
 
 Route::get('/program', [ClassTeacherLessonController::class, 'program'])->name('program.create');
 Route::post('/program/store', [ClassTeacherLessonController::class, 'store'])->name('program.store');
+
+Route::get('/grades/create/{class}/{lesson}', [GradeController::class, 'index'])->name('grades.create');
+Route::post('/grades/store/{class}/{lesson}', [GradeController::class, 'store'])->name('grades.store');
 
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

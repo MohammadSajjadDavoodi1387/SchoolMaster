@@ -88,11 +88,25 @@
             </div>
 
             <!-- Prescriptions Section -->
-            <div class="bg-white rounded-lg shadow p-6 flex items-center justify-between h-24">
-            <a href="prescription-form.html?doctor_id=1" class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition w-full text-center pt-5 pb-5">
-                ثبت نمرات
-            </a>
+            <div class="w-full mt-6 px-4 py-3 bg-white rounded-lg shadow-md border border-gray-200">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-200 pb-2">برنامه‌های تدریس معلم</h2>
+
+                @forelse ($teacher->classTeacherLessons as $program)
+                    <div class="flex items-center justify-between p-3 mb-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                        <div class="text-gray-700">
+                            <span class="font-medium">درس:</span> {{ $program->lesson->titleFa ?? 'نامشخص' }} |
+                            <span class="font-medium">کلاس:</span> {{ $program->class_base }}
+                        </div>
+                        <a href="{{ route('grades.create', ['class' => $program->class_base, 'lesson' => $program->lesson_id]) }}" 
+                        class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
+                            ثبت نمرات کلاس
+                        </a>
+                    </div>
+                @empty
+                    <p class="text-red-500 p-3 bg-red-50 rounded-lg">برنامه‌ی درسی‌ای برای این معلم ثبت نشده است.</p>
+                @endforelse
             </div>
+
         </main>
     
 @endsection
