@@ -25,6 +25,7 @@ class LessonFactory extends Factory
             'producer' => $this->faker->numberBetween(1, 8),
             'type' => $this->faker->randomElement(static::$types),
             'code' => $this->faker->numerify('##########'),
+            'base' => $this->faker->numerify('##'),
             'isActive' => $this->faker->boolean,
         ];
     }

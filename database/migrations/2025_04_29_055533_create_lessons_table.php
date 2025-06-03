@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('producer',100);
             $table->string('type',40);
             $table->string('code',40);
+            $table->string('base',10);
             $table->boolean('isActive')->default(1);
             $table->timestamps();
         });

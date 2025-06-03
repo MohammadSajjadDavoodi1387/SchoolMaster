@@ -30,6 +30,10 @@
                 <input id="code" name="code" type="text" value="{{ $lessons->code }}" class="w-full border border-gray-300 rounded px-3 py-2">
             </div>
             <div class="mb-4">
+                <label class="block text-gray-700 mb-2" for="base">نام پایه کتاب به عدد</label>
+                <input id="base" name="base" type="text" value="{{ $lessons->base }}" class="w-full border border-gray-300 rounded px-3 py-2">
+            </div>
+            <div class="mb-4">
                 <label class="block text-gray-700 mb-2" for="isActive">وضعیت</label>
                 <input id="isActive" name="isActive" type="text" value="{{ $lessons->isActive }}" class="w-full border border-gray-300 rounded px-3 py-2" required>
             </div>

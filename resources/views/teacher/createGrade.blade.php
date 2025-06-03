@@ -26,23 +26,30 @@
                 </thead>
                 <tbody>
                     @foreach ($students as $key => $student)
-                    <tr class="text-center">
-                        <td class="p-2 border">{{ $key + 1 }}</td>
-                        <td class="p-2 border">{{ $student->name }}</td>
-                        <input type="hidden" name="grades[{{ $student->id }}][student_id]" value="{{ $student->id }}">
-                        <td class="p-2 border">
-                            <input type="number" step="0.01" name="grades[{{ $student->id }}][first_internal]" class="w-full border p-1">
-                        </td>
-                        <td class="p-2 border">
-                            <input type="number" step="0.01" name="grades[{{ $student->id }}][first_final]" class="w-full border p-1">
-                        </td>
-                        <td class="p-2 border">
-                            <input type="number" step="0.01" name="grades[{{ $student->id }}][second_internal]" class="w-full border p-1">
-                        </td>
-                        <td class="p-2 border">
-                            <input type="number" step="0.01" name="grades[{{ $student->id }}][second_final]" class="w-full border p-1">
-                        </td>
-                    </tr>
+                        @php
+                            $grade = $existingGrades[$student->id] ?? null;
+                        @endphp
+                        <tr class="text-center">
+                            <td class="p-2 border">{{ $key + 1 }}</td>
+                            <td class="p-2 border">{{ $student->name }}</td>
+                            <input type="hidden" name="grades[{{ $student->id }}][student_id]" value="{{ $student->id }}">
+                            <td class="p-2 border">
+                                <input type="number" step="0.01" name="grades[{{ $student->id }}][continuous_assessment1]" class="w-full border p-1"
+                                    value="{{ $grade->continuous_assessment1 ?? '' }}">
+                            </td>
+                            <td class="p-2 border">
+                                <input type="number" step="0.01" name="grades[{{ $student->id }}][midterm1]" class="w-full border p-1"
+                                    value="{{ $grade->midterm1 ?? '' }}">
+                            </td>
+                            <td class="p-2 border">
+                                <input type="number" step="0.01" name="grades[{{ $student->id }}][continuous_assessment2]" class="w-full border p-1"
+                                    value="{{ $grade->continuous_assessment2 ?? '' }}">
+                            </td>
+                            <td class="p-2 border">
+                                <input type="number" step="0.01" name="grades[{{ $student->id }}][midterm2]" class="w-full border p-1"
+                                    value="{{ $grade->midterm2 ?? '' }}">
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>

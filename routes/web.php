@@ -26,6 +26,7 @@ Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('st
 Route::get('/students/edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
 Route::post('/students/{id}', [StudentController::class, 'update'])->name('student.update');
 Route::get('/students/{id}', [StudentController::class,'show'])->name('student.show');
+Route::get('/students/report-card/{student}', [GradeController::class, 'reportCard'])->name('student.report-card');
 
 Route::get('/program', [ClassTeacherLessonController::class, 'program'])->name('program.create');
 Route::post('/program/store', [ClassTeacherLessonController::class, 'store'])->name('program.store');

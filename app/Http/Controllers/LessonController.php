@@ -26,6 +26,7 @@ class LessonController extends Controller
             'producer' => 'nullable|string|max:10',
             'type' => 'nullable|string|max:40',
             'code' => 'nullable|string|max:40',
+            'base' => 'required|string|max:10',
             'isActive' => 'required|boolean',
         ]);
 
@@ -55,13 +56,14 @@ class LessonController extends Controller
             'producer' => 'nullable|string|max:100',
             'type' => 'nullable|string|max:40',
             'code' => 'nullable|string|max:40',
+            'base' => 'required|string|max:10',
             'isActive' => 'required|boolean',
         ]);
 
         $lessons = Lesson::findOrFail($id);
 
         $lessons->update($request->only([
-            'titleFa', 'titleEn', 'producer', 'type', 'code', 'description', 'isActive'
+            'titleFa', 'titleEn', 'producer', 'type', 'code', 'base' , 'isActive'
         ]));
 
         return redirect()->route('lessons.index')->with("success","Lesson update Successfully");

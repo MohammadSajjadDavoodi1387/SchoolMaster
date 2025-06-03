@@ -92,7 +92,7 @@
 
             <!-- Prescriptions Section -->
             <div class="bg-white rounded-lg shadow p-6 flex items-center justify-between h-24">
-            <a href="prescription-form.html?doctor_id=1" class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition w-full text-center pt-5 pb-5">
+            <a href="{{ route('student.report-card', ['student' => $students->id]) }}" class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition w-full text-center pt-5 pb-5">
                 دیدن کارنامه
             </a>
             </div>

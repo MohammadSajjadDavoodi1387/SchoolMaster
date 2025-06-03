@@ -16,6 +16,7 @@ class Lesson extends Model
         'producer',
         'type',
         'code',
+        'base',
         'isActive'
     ];
 
