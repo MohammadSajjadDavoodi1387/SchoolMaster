@@ -35,17 +35,14 @@ class ClassTeacherLessonController extends Controller
             return redirect()->back()->with('error', 'این برنامه قبلاً ثبت شده است.');
         }
 
-        ClassTeacherLesson::create([
-            'teacher_id' => $request->teacher_id,
-            'lesson_id' => $request->lesson_id,
-            'class_base' => $request->class_base,
-        ]);
+        $newEntry = new ClassTeacherLesson();
+        $newEntry->teacher_id = $request->teacher_id;
+        $newEntry->lesson_id = $request->lesson_id;
+        $newEntry->class_base = $request->class_base;
+        $newEntry->save();
 
-        return redirect()->back()->with('success', 'برنامه کلاس با موفقیت ثبت شد.');
+        return redirect()->back()->with('success', 'برنامه با موفقیت ذخیره شد.');
     }
-
-
-
 
     public function index()
     {
